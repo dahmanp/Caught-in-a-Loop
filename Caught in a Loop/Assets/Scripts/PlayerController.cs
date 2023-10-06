@@ -180,8 +180,13 @@ public class PlayerController : MonoBehaviourPun
     [PunRPC]
     public void Shield(int duration)
     {
+        photonView.RPC("Shield", RpcTarget.Others);
+    }
+
+    void addshield()
+    {
         shield.gameObject.SetActive(true);
-        Invoke("removeshield", duration);
+        Invoke("removeshield", 20.0f);
     }
 
     void removeshield()

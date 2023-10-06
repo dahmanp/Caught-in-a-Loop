@@ -21,31 +21,12 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && isMine)
-        {
-            PlayerController player = GameManager.instance.GetPlayer(other.gameObject);
-        }
         // did we hit a player?
         // if this is the local player's bullet, damage the hit player
         // we're using client side hit detection
         if (other.CompareTag("Player") && isMine)
         {
             PlayerController player = GameManager.instance.GetPlayer(other.gameObject);
-            /*if (player.id % 2 = 0)
-            {
-                if (attackerId % 2 != 0)
-                {
-                    if (player.id != attackerId)
-                        player.photonView.RPC("TakeDamage", player.photonPlayer, attackerId, damage);
-                }
-            } else if (player.id % 2 != 0)
-            {
-                if (attackerId % 2 = 0)
-                {
-                    if (player.id != attackerId)
-                        player.photonView.RPC("TakeDamage", player.photonPlayer, attackerId, damage);
-                }
-            } */
             if (player.id != attackerId)
                 player.photonView.RPC("TakeDamage", player.photonPlayer, attackerId, damage);
         }
