@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviourPun
     public PlayerWeapon weapon;
 
     private int curAttackerId;
-    //private float invisTime = 20;
 
     [SerializeField] private TextMeshProUGUI Nametag;
 

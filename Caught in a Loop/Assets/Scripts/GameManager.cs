@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviourPun
         {
             photonView.RPC("WinGame", RpcTarget.All, players.First(x => !x.dead).id);
         }
-        //GameUI.UIid = players.First(x => !x.dead).id;
     }
 
     [PunRPC]
