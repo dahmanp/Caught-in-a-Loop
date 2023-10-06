@@ -190,10 +190,10 @@ public class PlayerController : MonoBehaviourPun
     }
 
     [PunRPC]
-    public void Zoom(int amountToZoom, int duration)
+    public void Zoom(int amountToZoom)
     {
         moveSpeed = moveSpeed + amountToZoom;
-        Invoke("removeshield", duration);
+        Invoke("removeshield", 10.0f);
     }
 
     void removeZoom(int amountToZoom)
